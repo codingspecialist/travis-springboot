@@ -27,6 +27,7 @@ before_deploy:
   - mkdir -p deploy
   - mv blog-server-repository.zip deploy/blog-server-repository.zip
 
+# deploy 적을 때 들여쓰기 유의
 deploy:
   - provider: s3
     acess_key_id: $AWS_ACCESS_KEY
