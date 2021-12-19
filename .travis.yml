@@ -21,3 +21,19 @@ notifications: # 4.
   email:
     recipients:
       - getinthere@naver.com
+
+before_deploy:
+  - zip -r blog-server-repository *  # 압축하고 싶은 파일명 (보통 github repo 이름)
+  - mkdir -p deploy
+  - mv blog-server-repository.zip deploy/blog-server-repository.zip
+
+deploy:
+  - provider: s3
+     acess_key_id: $AWS_ACCESS_KEY
+     secret_access_key: $AWS_SECRET_KEY
+     bucket: metacoding-blog-storage  # S3 버킷 이름
+     region: ap-northeast-2
+     skip_cleanup: true
+     acl: private
+     local_dir: deploy # travis 서버의 해당 폴더(deploy)의 파일들만 S3로 전송
+     wait-until-deployed: true # deploy가 끝나면 S3-> EC2로 배포해야 해서 필요한 설정
