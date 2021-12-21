@@ -4,8 +4,7 @@ echo "1. 환경 설정하기"
 REPOSITORY=/home/ubuntu/webapp
 DEPLOY_DIRECTORY=/home/ubuntu/deploy
 PROJECT_NAME=blog-server-repository
-JAR_NAME=$REPOSITORY/$PROJECT_NAME/blog-server-repository
-.jar
+JAR_NAME=$REPOSITORY/$PROJECT_NAME/blog-server-repository.jar
 
 echo "2. 현재 구동중인 애플리케이션 pid 확인해서 강제종료하기"
 
