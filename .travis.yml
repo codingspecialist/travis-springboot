@@ -36,7 +36,6 @@ deploy:
     region: ap-northeast-2
     skip_cleanup: true
     local_dir: deploy # travis 서버의 해당 폴더(deploy)의 파일들만 S3로 전송
-    acl: private
     wait-until-deployed: true # deploy가 끝나면 S3-> EC2로 배포해야 해서 필요한 설정
 
   # 코드 디플로이에 던지기
@@ -46,7 +45,7 @@ deploy:
     bucket: metacoding-blog-storage
     key: blog-server-repository.zip # S3에서 저장된 파일명
     bundle_type: zip # 번들 타입만 지정되면 자동으로 압축 풀림
-    application: blog-codedeploy # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션 이름
+    application: blog-codeDeploy # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션 이름 (대소문자 유의하자)
     deployment_group: cicd-deploy-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹 -> 현재는 하나의 EC2에만 배포함
     region: ap-northeast-2
     wait-until-deployed: true
