@@ -29,5 +29,5 @@ cp $DEPLOY_DIRECTORY/build/libs/*.jar $REPOSITORY/$PROJECT_NAME/blog-server-repo
 echo "4. jar파일 실행권한 주고 nohup 으로 실행하기 - 출력 재지정(Redirect) 안하면 오류남!"
 
 chmod +x $JAR_NAME
-nohup java -jar -Dspring.profiles.active=prod -Dfile.encoding=UTF-8  $JAR_NAME > $REPOSITORY/$PROJECT_NAME/nohup.out 2>&1 &
+sudo nohup java -jar -Dspring.profiles.active=prod -Dfile.encoding=UTF-8  $JAR_NAME > $REPOSITORY/$PROJECT_NAME/nohup.out 2>&1 &
 # nohup java -jar $JAR_NAME > $REPOSITORY/$PROJECT_NAME/nohup.out 2>&1 & 
