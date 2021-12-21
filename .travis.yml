@@ -43,7 +43,7 @@ deploy:
     acess_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: metacoding-blog-storage
-    key: metacoding-blog-storage.zip # S3에서 저장된 파일명
+    key: blog-server-repository.zip # S3에서 저장된 파일명
     bundle_type: zip # 번들 타입만 지정되면 자동으로 압축 풀림
     application: blog-codedeploy # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션 이름
     deployment_group: cicd-deploy-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹 -> 현재는 하나의 EC2에만 배포함
