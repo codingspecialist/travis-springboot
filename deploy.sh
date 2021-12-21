@@ -30,4 +30,4 @@ echo "4. jar파일 실행권한 주고 nohup 으로 실행하기 - 출력 재지
 
 chmod +x $JAR_NAME
 nohup java -jar -Dspring.profiles.active=prod -Dfile.encoding=UTF-8  $JAR_NAME > $REPOSITORY/$PROJECT_NAME/nohup.out 2>&1 &
-# nohup java -jar $JAR_NAME > $REPOSITORY/$PROJECT_NAME/nohup.out 2>&1 &
+# nohup java -jar $JAR_NAME > $REPOSITORY/$PROJECT_NAME/nohup.out 2>&1 & 
