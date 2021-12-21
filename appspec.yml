@@ -1,0 +1,22 @@
+version: 0.0
+os : linux
+files :
+  - source : /
+    destination: /home/ubuntu/deploy
+    overwrite : yes
+
+
+# CodeDeploy 에서 EC2 로 넘겨준 파일 모두 ubuntu 권한 설정
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+
+# CodeDeploy 배포 단계에서 실행할 명령어 설정
+# ApplicationStart 단계 : ec2-user 권한으로 deploy.sh 실행
+hooks:
+  ApplicationStart:
+    - location: deploy.sh
+      timeout: 60
+      runas: ubuntu
